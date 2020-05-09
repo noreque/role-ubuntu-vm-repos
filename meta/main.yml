@@ -1,0 +1,13 @@
+galaxy_info:
+  author: Etienne Prud’homme
+  description: Noreque Ansible role for vm repositories
+  company: Noreque Solutions
+  issue_tracker_url: https://github.com/noreque/role-ubuntu-vm-repos/issues
+  license: GPL-3.0-or-later
+  min_ansible_version: 2.9
+  platforms:
+  - name: Ubuntu
+    versions:
+    - 20.04
+  galaxy_tags: []
+dependencies: []

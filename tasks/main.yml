@@ -1,0 +1,30 @@
+---
+# tasks file for noreque.role-ubuntu-vm-repos
+
+- name: Add Virtualbox Apt signing key
+  - apt_key:
+      id: CA5D570DDFDB695A0301885765DD8E285368742C 
+      url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+      state: present
+
+# FIXME: Temporary fix until focal has a repository
+- name: Add Virtualbox repository
+  apt_repository:
+    repo: deb https://download.virtualbox.org/virtualbox/debian eon contrib
+    state: present
+
+- name: Add Wine Apt signing key
+  - apt_key:
+      id: 8CAED77BC6762099A471147332E07661B7543DDA 
+      url: https://dl.winehq.org/wine-builds/winehq.key
+      state: present
+
+- name: Add Wine repository
+  apt_repository:
+    repo: deb https://dl.winehq.org/wine-builds/ubuntu/ focal main
+    state: present
+
+- name: Add Faudio repository
+  apt_repository:
+    repo: ppa:cybermax-dexter/sdl2-backport
+    state: present
